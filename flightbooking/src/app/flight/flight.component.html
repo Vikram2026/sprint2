@@ -1,0 +1,29 @@
+<br><br>
+<button type="button" class="btn btn-primary btn-lg btn-block"  (click)="getData()" value="Customer Bookings">See Customer Booking</button>
+
+<br><br>
+
+<div class="container">
+    <table class="table table-fixed">
+      <thead>
+        <tr>
+          <th class="col-xs-3">First Name</th>
+          <th class="col-xs-3">Last Name</th>
+          <th class="col-xs-6">E-mail</th>
+          <th class="col-xs-3">Meal</th>
+          <th class="col-xs-3">SeatNo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr   *ngFor="let booking of bookingModels">
+          <td class="col-xs-3">{{booking.name}}</td>
+          <td class="col-xs-3"> {{booking.email}}</td>
+          <td class="col-xs-3">{{booking.passengerDetails}}</td>
+          <td class="col-xs-3"> {{booking.meal}}</td>
+          <td class="col-xs-3"> {{booking.seatNo}}</td>
+        </tr>
+  
+        
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,134 @@
+<br>
+<button class="btn btn-primary center"  routerLink="/flight" >click here to see Customer Booking Details</button>
+<br><br>
+
+
+<body>
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">&nbsp; &nbsp;&nbsp; &nbsp;   Add Flight Here
+			</div>
+			<div class="panel-body">
+				<form name="myform">
+					<div class="form-group">
+						<label for="myName"> &nbsp; &nbsp; Flight No</label>
+						<input id="myName" name="myName" class="form-control" [(ngModel)]="flightModel.flightNo" type="text">
+						
+					</div>
+					<div class="form-group">
+						<label for="lastname">&nbsp; &nbsp; Airline</label>
+						<input id="myName" name="myName" class="form-control"  [(ngModel)]="flightModel.airline" type="text">
+						
+					</div>
+					<div class="form-group">
+						<label for="age">&nbsp; &nbsp; Source</label>
+						<input id="myName" name="myName" class="form-control"  [(ngModel)]="flightModel.fromPlace" type="text">
+						
+					</div>
+					<div class="form-group">
+						<label for="dob">  &nbsp; &nbsp;Destination</label>
+                        <input id="myName" name="myName" class="form-control" [(ngModel)]="flightModel.toPlace" type="text">
+						
+					</div>
+					
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; Days</label>
+						<input id="myName" name="myName" class="form-control"[(ngModel)]="flightModel.days" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; Instruments</label>
+						<input id="myName" name="myName" class="form-control"  [(ngModel)]="flightModel.instrument" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; BusinessSeats</label>
+						<input id="myName" name="myName" class="form-control" [(ngModel)]="flightModel.businessSeats" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; NonBusinessSeats</label>
+						<input id="myName" name="myName" class="form-control"  [(ngModel)]="flightModel.nonBusinessSeats" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; ticketCost</label>
+                        <input id="myName" name="myName" class="form-control"  [(ngModel)]="flightModel.ticketCost" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; No of Rows</label>
+						<input id="myName" name="myName" class="form-control" [(ngModel)]="flightModel.rows" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; Meal</label>
+                        <input id="myName" name="myName" class="form-control" [(ngModel)]="flightModel.meal" type="text">
+						
+					</div>
+					<br>
+                    &nbsp;&nbsp;	<button id="submit" type="submit" value="submit" class="btn btn-primary center"  (click)="Addflight()">Submit</button>  &nbsp; &nbsp; &nbsp;
+                    
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+
+<br>
+
+
+
+
+<button id="submit" type="submit" value="submit" class="btn btn-primary center" (click)="getData()" value="See Airlines">click here to see all available airlines</button>
+<br><br>
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="table-responsive bg-white">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Flight No</th>
+                      <th scope="col">Airline</th>
+                      <th scope="col">Source</th>
+                      <th scope="col">Departure</th>
+                      <th scope="col">start time</th>
+                      <th scope="col">End time</th>
+                      <th scope="col">Ticket</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let flight of flightModels">
+                    
+                        <td> {{flight.flightNo}} </td>
+                        <td> {{flight.airline}} </td>
+                        <td> {{flight.fromPlace}} </td>
+                        <td> {{flight.toPlace}} </td>
+                        <td> {{flight.startDateTime}} </td>
+                        <td> {{flight.endDateTime}} </td>
+                        <td> {{flight.ticketCost}}</td>
+
+                        <button type="button" class="btn btn-warning" value="Update" (click)="Editflight(flight)">Upadate</button>
+                        &nbsp; <button type="button" class="btn btn-warning" value="Delete" (click)="Deleteflight(flight)">Delete</button>
+                       
+                    </tr>
+                  
+                  
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
