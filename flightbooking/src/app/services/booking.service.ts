@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
   providedIn: 'root'
 })
 export class BookingService {
-  private _bookingtUrl = "https://localhost:44353/api/Booking";
+  private _bookingtUrl = "https://flightapiazure.azurewebsites.net/api/Booking";
     constructor(private http: HttpClient, private _router: Router) { }
 
 

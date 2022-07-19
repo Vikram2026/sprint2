@@ -14,7 +14,7 @@ export class AccountComponent {
   bookingModels: Array<booking> = new Array<booking>();
   getData(){
     console.log("Hi");
-    this.httpc.get("https://localhost:44353/api/booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+    this.httpc.get("https://flightapiazure.azurewebsites.net/api/Booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
   
   GetSuccess(input:any){

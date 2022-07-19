@@ -1,21 +1,179 @@
-<div class="container">
-  <div class="row">
-      <ng-container *ngFor="let flight of flights | filter:searchKey:'airline'">
-          
-          <div class="card col-md-3">
-              <img src="{{flight.image}}" alt="">
-              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.flightNo}}</h5>
-              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.airline}}</p>
-              <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.image}}</p> -->
-              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>From:</strong> {{flight.fromPlace}}   </p>
-              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>To:</strong> {{flight.toPlace}}</p> 
-               <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.startDateTime}}</p>  
-              <p><strong>Price:</strong> {{flight.ticketCost}}</p>
-              <button class="btn btn-primary" (click)="goto()">Book</button>
-              
-          </div>
-      </ng-container>
-  
+<!DOCTYPE html>
+<html lang="en">
 
-  </div>
-</div>
+<head>
+	<title>Travelix</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Travelix Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" src="../home/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="styles/main_styles.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="styles/responsive.css"> -->
+</head>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+
+
+		<!-- Home -->
+
+		<div class="home">
+
+			<!-- Home Slider -->
+
+			<div class="home_slider_container">
+
+				<div class="owl-carousel owl-theme home_slider">
+
+					<!-- Slider Item -->
+					<div class="owl-item home_slider_item">
+						<!-- Image by https://unsplash.com/@anikindimitry -->
+						<div class="home_slider_background" style="background-image:url(../../assets/images/abcd.jpg)">
+						</div>
+
+						<div class="home_slider_content text-center">
+							<div class="home_slider_content_inner" data-animation-in="flipInX"
+								data-animation-out="animate-out fadeOut">
+								<h1>touch</h1>
+								<h1>the sky</h1>
+								<div class="button home_slider_button">
+									<div class="button_bcg"></div><a>book now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Home Slider Nav - Prev -->
+				<div class="home_slider_nav home_slider_prev">
+					<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+						viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+						<defs>
+							<linearGradient id='home_grad_prev'>
+								<stop offset='0%' stop-color='#fa9e1b' />
+								<stop offset='100%' stop-color='#8d4fff' />
+							</linearGradient>
+						</defs>
+						<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+					M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+					C22.545,2,26,5.541,26,9.909V23.091z" />
+						<polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+					11.042,18.219 " />
+					</svg>
+				</div>
+
+				<!-- Home Slider Nav - Next -->
+				<div class="home_slider_nav home_slider_next">
+					<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+						viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+						<defs>
+							<linearGradient id='home_grad_next'>
+								<stop offset='0%' stop-color='#fa9e1b' />
+								<stop offset='100%' stop-color='#8d4fff' />
+							</linearGradient>
+						</defs>
+						<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+				M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+				C22.545,2,26,5.541,26,9.909V23.091z" />
+						<polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+				17.046,15.554 " />
+					</svg>
+				</div>
+
+				<!-- Home Slider Dots -->
+
+
+
+			</div>
+
+		</div>
+
+		<!-- Intro -->
+
+		<div class="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2 class="intro_title text-center">We have the best tours</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1">
+						<div class="intro_text text-center">
+							<p>“Traveling the globe, making dreams come true.”.<br> A Great way to Fly” </p>
+						</div>
+					</div>
+				</div><br>
+
+				<input type="radio" id="One Way" name="fav_language" value="One Way">
+				<label for="One Way">One Way</label>
+				 <input type="radio" id="Round Trip" name="fav_language" value="Round Rrip">
+				 <label for="Round Trip">Round Trip</label><br><br>
+				<input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)"
+					placeholder="Search Flights by Source">
+					<br><br>
+				<div class="d-flex flex-row mb-4">
+					
+					<!-- Intro Item -->
+
+					<div *ngFor="let flight of flights | filter:searchKey:'fromPlace'" class="col-lg-4 intro_col"
+						style="margin-right:20px ;">
+						<div class="intro_item">
+							<div class="intro_item_overlay"></div>
+							<!-- Image by https://unsplash.com/@dnevozhai -->
+							<div class="intro_item_background" style="background-image:url(../../assets/spicejet.jpg)">
+							</div>
+							<div
+								class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+								<div class="intro_date">{{flight.days}}: {{flight.startDateTime}} -
+									{{flight.endDateTime}}</div>
+								<div class="button intro_button">
+									<div class="button_bcg"></div><a (click)="goto()">Book</a>
+								</div>
+								<div class="intro_center text-center">
+									<h1>{{flight.fromPlace}} &nbsp; {{flight.toPlace}}</h1>
+									<div class="intro_price">{{flight.ticketCost}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Copyright -->
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 order-lg-1 order-2  ">
+						<div class="copyright_content d-flex flex-row align-items-center">
+							<div style="text-align:center;">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>document.write(new Date().getFullYear());</script> All rights reserved
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

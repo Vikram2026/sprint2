@@ -32,7 +32,7 @@ export class BookingComponent implements OnInit {
       
 
     }
-    this.httpc.post("https://localhost:44353/api/Booking",bookingto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    this.httpc.post("https://flightapiazure.azurewebsites.net/api/Booking",bookingto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
     this.bookingModel = new booking();
   }
   PostSuccess(res:any){
@@ -51,7 +51,7 @@ export class BookingComponent implements OnInit {
   }
   getBookings(){
     console.log("Hi");
-    this.httpc.get("https://localhost:44353/api/Booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+    this.httpc.get("https://flightapiazure.azurewebsites.net/api/Booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
   
   GetSuccess(input:any){

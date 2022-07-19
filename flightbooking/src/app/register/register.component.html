@@ -1,32 +1,4 @@
-<!-- <div class="py-5">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <div class="card rounded-0">
-                <div class="Card-header">
-                    <h3 class="mb-0">Register</h3>
-                </div>
-                <div class="card-body">
-                    <div class="form">
-                        <div class="col-md-12">
-                            <label class="form-label" for="floatingInput">UserName</label>
-                            <input type="email" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.userName" placeholder="Please enter your email">
-                        </div>
-                        <div class="col-md-12">
-                            <label class="form-label" for="floatingPassword">Password</label>
-                            <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="registerUserData.password" placeholder="Password">
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check"></div>
-                            </div>
-                        <button class="btn btn-lg btn-primary" (click)="registerUser()" type="submit">Register</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
+<br><br><br>
 <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -40,14 +12,14 @@
             
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg"  [(ngModel)]="registerUserData.userName"  />
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="username" [(ngModel)]="registerUserData.userName"  />
                   <label class="form-label" for="form3Example1cg">User Name</label>
                 </div>
 
                
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg"   [(ngModel)]="registerUserData.password" />
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"  [(ngModel)]="registerUserData.password" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 

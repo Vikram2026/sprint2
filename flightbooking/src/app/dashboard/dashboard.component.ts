@@ -29,8 +29,6 @@ export class DashboardComponent  {
      
       toPlace:this.flightModel.toPlace,
 
-  
-
       days:this.flightModel.days,
 
       instrument:this.flightModel.instrument,
@@ -44,9 +42,12 @@ export class DashboardComponent  {
       rows:Number(this.flightModel.rows),
       
       meal:this.flightModel.meal,
-      
+      startDateTime:this.flightModel.startDateTime,
+      endDateTime:this.flightModel.endDateTime
+
+
     }
-    this.httpc.post("https://localhost:44353/api/flight",flightto).subscribe((res: any)=>this.PostSuccess(res),(res: any)=>this.PostError(res));
+    this.httpc.post("https://flightapiazure.azurewebsites.net/api/Flight",flightto).subscribe((res: any)=>this.PostSuccess(res),(res: any)=>this.PostError(res));
     this.flightModel = new flight();
     
   }
@@ -66,7 +67,7 @@ export class DashboardComponent  {
   }
   getData(){
     console.log("Hi");
-    this.httpc.get("https://localhost:44353/api/flight").subscribe((res: any)=>this.GetSuccess(res),(res: any)=>this.GetError(res));
+    this.httpc.get("https://flightapiazure.azurewebsites.net/api/Flight").subscribe((res: any)=>this.GetSuccess(res),(res: any)=>this.GetError(res));
   }
   
   GetSuccess(input:any){
@@ -74,6 +75,17 @@ export class DashboardComponent  {
   }
   GetError(input:any){
     console.log(input);
+  }
+  uploadFile=(files:any)=>{
+    console.log("Hi");
+    
+    if(files.length==0){
+      return;
+    }
+    let filetoUpload=<File>files[0];
+    const formData=new FormData();
+    formData.append('file',filetoUpload,filetoUpload.name)
+    this.httpc.post("https://localhost:44311/api/upload",formData).subscribe((res: any)=>console.log(res),(res: any)=>console.log(res));
   }
   
   

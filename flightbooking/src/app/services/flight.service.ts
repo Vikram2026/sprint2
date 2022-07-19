@@ -10,7 +10,7 @@ export class FlightService {
 
   public search = new BehaviorSubject<string>("");
     
-  private _flightUrl = "https://localhost:44353/api/Flight";
+  private _flightUrl = "https://flightapiazure.azurewebsites.net/api/Flight";
   
   constructor(private http: HttpClient, private _router: Router) { }
 
