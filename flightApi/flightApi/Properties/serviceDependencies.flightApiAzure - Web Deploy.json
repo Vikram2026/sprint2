@@ -5,6 +5,12 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:FlightBookConnection",
       "secretStore": "AzureAppSettings"
+    },
+    "storage1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/myazurestorage12",
+      "type": "storage.azure",
+      "connectionId": "DefaultEndpointsProtocol=https;AccountName=myazurestorage12;AccountKey=ZVwU6jDMIjBX1Fnfo7TKjyFxSLbHn+NFGaeuIygCuryjRrP8BLPlFPIHhU7SdOkRFGShBFO3TSyw+AStEjhbhg==;EndpointSuffix=core.windows.net",
+      "secretStore": "AzureAppSettings"
     }
   }
 }

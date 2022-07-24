@@ -3,6 +3,10 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:FlightBookConnection"
+    },
+    "storage1": {
+      "type": "storage",
+      "connectionId": "DefaultEndpointsProtocol=https;AccountName=myazurestorage12;AccountKey=ZVwU6jDMIjBX1Fnfo7TKjyFxSLbHn+NFGaeuIygCuryjRrP8BLPlFPIHhU7SdOkRFGShBFO3TSyw+AStEjhbhg==;EndpointSuffix=core.windows.net"
     }
   }
 }

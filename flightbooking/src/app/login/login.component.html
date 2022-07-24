@@ -1,32 +1,4 @@
 
-<!-- <div class="py-5">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <div class="card rounded-0">
-                <div class="Card-header">
-                    <h3 class="mb-0">Login</h3>
-                </div>
-                <div class="card-body">
-                    <div class="form">
-                        <div class="col-md-12">
-                            <label class="form-label" for="floatingInput">UserName</label>
-                            <input type="email" class="form-control"   [(ngModel)]="loginUserData.userName" id="floatingInput" placeholder="Please enter your email">
-                        </div>
-                        <div class="col-md-12">
-                            <label class="form-label" for="floatingPassword">Password</label>
-                            <input type="password" class="form-control" [(ngModel)]="loginUserData.password" id="floatingPassword" placeholder="Password">
-                        </div>
-                        <div class="col-12">
-                            <div class="form-check"></div>
-                            </div>
-                        <button class="btn btn-lg btn-primary" (click)="LoginUser()" type="submit">Sign in</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 
 
 
@@ -93,14 +65,15 @@
   
           <div class="card bg-glass">
             <div class="card-body px-4 py-5 px-md-5">
-            
+              <form action="" [formGroup]="loginUserData.formLoginGroup" class="form">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
                 
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input  type="email"  class="form-control" name="username"  [(ngModel)]="loginUserData.userName" id="floatingInput" placeholder=""/>
-                      <label class="form-label" for="form3Example2">User Name</label>
+                      <input  [(ngModel)]="loginUserData.userName" formControlName="UserNameControl" type="text" name="loginUser" id="loginUser" required/>
+                      <label class="form-label"  for="loginUser">User Name</label>
+                      <p style="color: red;" [hidden]="!(hasError('required','UserNameControl'))">UserName is required *</p>
                     </div>
                   </div>
                 </div>
@@ -108,25 +81,18 @@
   
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password"  class="form-control" name="password" [(ngModel)]="loginUserData.password" id="floatingPassword" placeholder=""/>
-                  <label class="form-label" for="form3Example4">Password</label>
+                  <input [(ngModel)]="loginUserData.password" formControlName="PasswordControl"  type="password" name="loginPassword" id="loginPassword" required/><br>
+                  <label class="form-label" for="loginPassword">Password</label>
+                  <p style="color: red;" [hidden]="!(hasError('required','PasswordControl'))">Password is required*</p>
                 </div>
   
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                  <label class="form-check-label" for="form2Example33">  
-                  I agree all statements in Terms of service
-                  </label>
-                </div>
+               
   
                 <!-- Submit button -->
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                <button ype="submit" class="btn btn-primary btn-block mb-4"  (click)="LoginUser()" >
-                  Sign in
-                </button>
+                 <input (click)="LoginUser()" [disabled]="!(loginUserData.formLoginGroup.valid)" type="submit" value="Login" class="submit-btn" />
   
-              
+              </form>
               
             </div>
           </div>

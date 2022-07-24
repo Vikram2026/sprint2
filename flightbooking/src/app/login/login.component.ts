@@ -17,13 +17,20 @@ export class LoginComponent implements OnInit {
   }
 
   LoginUser() {
-    this._auth.loginUser(this.loginUserData).subscribe(res => {
+    var userDataObject={
+      userName:this.loginUserData.userName,
+      password:this.loginUserData.password
+    }
+    this._auth.loginUser(userDataObject).subscribe(res => {
       localStorage.setItem('token', res.token);
       if (res.isAdmin)
         this._router.navigate(['/dashboard']);
       else
-        this._router.navigate(['/account']);
+        this._router.navigate(['/flight']);
     }, err => console.log(err));
   }
 
+  hasError(typeofvalidator:string,controlname:string):Boolean{
+    return this.loginUserData.formLoginGroup.controls[controlname].hasError(typeofvalidator);
+  }
 }

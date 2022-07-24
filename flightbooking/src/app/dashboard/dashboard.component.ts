@@ -85,7 +85,7 @@ export class DashboardComponent  {
     let filetoUpload=<File>files[0];
     const formData=new FormData();
     formData.append('file',filetoUpload,filetoUpload.name)
-    this.httpc.post("https://localhost:44311/api/upload",formData).subscribe((res: any)=>console.log(res),(res: any)=>console.log(res));
+    this.httpc.post("https://flightapiazure.azurewebsites.net/api/UploadFile",formData).subscribe((res: any)=>console.log(res),(res: any)=>console.log(res));
   }
   
   

@@ -1,11 +1,25 @@
 {
   "dependencies": {
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2022-07-20T02:46:11.0166087Z"
+    },
     "mssql1": {
       "restored": true,
       "restoreTime": "2022-07-19T08:14:34.0774616Z"
     }
   },
   "parameters": {
+    "storage1.resourceGroupName": {
+      "Name": "storage1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "ng-serve"
+    },
+    "storage1.subscriptionId": {
+      "Name": "storage1.subscriptionId",
+      "Type": "subscription",
+      "Value": "1e3a3630-f51b-4aa6-98a7-c7f935b04ae8"
+    },
     "mssql1.subscriptionId": {
       "Name": "mssql1.subscriptionId",
       "Type": "subscription",
